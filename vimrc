@@ -68,7 +68,7 @@ set tabstop=4
 set shiftwidth=4
 
 " indent things
-set nowrap
+set tw=99
 set smartindent
 set autoindent
 filetype indent on
