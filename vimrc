@@ -138,5 +138,11 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 " file explorer
 Plug 'justinmk/vim-dirvish'
+" js syntax highlighting
+Plug 'pangloss/vim-javascript'
+" react syntax highlighting
+Plug 'mxw/vim-jsx'
+" react json highlighting
+Plug 'elzr/vim-json'
 call plug#end()
 
