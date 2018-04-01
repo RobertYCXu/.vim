@@ -1,5 +1,32 @@
+" plugs
+call plug#begin('~/.vim/plugged')
+" comment out stuff fast
+Plug 'tpope/vim-commentary'
+" auto brackets
+Plug 'raimondi/delimitMate'
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" git integration
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+" file explorer
+Plug 'justinmk/vim-dirvish'
+" js syntax highlighting
+Plug 'pangloss/vim-javascript'
+" react syntax highlighting
+Plug 'mxw/vim-jsx'
+" react json highlighting
+Plug 'elzr/vim-json'
+" Bclose command (closes current buffer but not all windows)
+Plug 'chrismccord/bclose.vim'
+" palenight color scheme
+Plug 'drewtempelmeyer/palenight.vim'
+" Syntax checker via syntastic
+Plug 'vim-syntastic/syntastic'
+call plug#end()
+
 " color theme
-colors deus
+colorscheme palenight
 
 " turn on filetype detection
 filetype plugin on
@@ -114,6 +141,20 @@ augroup END
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
+" PALENIGHT
+" Enable true colors
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,24 +166,4 @@ function! HasPaste()
     return ''
 endfunction
 
-" plugs
-call plug#begin('~/.vim/plugged')
-" comment out stuff fast
-Plug 'tpope/vim-commentary'
-" auto brackets
-Plug 'raimondi/delimitMate'
-" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" git integration
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-" file explorer
-Plug 'justinmk/vim-dirvish'
-" js syntax highlighting
-Plug 'pangloss/vim-javascript'
-" react syntax highlighting
-Plug 'mxw/vim-jsx'
-" react json highlighting
-Plug 'elzr/vim-json'
-call plug#end()
 
