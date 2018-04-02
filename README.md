@@ -1,1 +1,1 @@
-# .vim
+# Personal vim config
