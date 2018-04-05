@@ -1,28 +1,38 @@
-" plugs
+" PLUGS
 call plug#begin('~/.vim/plugged')
-" comment out stuff fast
+" Comment out stuff fast
 Plug 'tpope/vim-commentary'
-" auto brackets
+" Auto brackets
 Plug 'raimondi/delimitMate'
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" git integration
+" Git integration
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-" file explorer
+" File explorer
 Plug 'justinmk/vim-dirvish'
 " js syntax highlighting
 Plug 'pangloss/vim-javascript'
-" react syntax highlighting
+" React syntax highlighting
 Plug 'mxw/vim-jsx'
-" react json highlighting
+" json highlighting
 Plug 'elzr/vim-json'
 " Bclose command (closes current buffer but not all windows)
 Plug 'chrismccord/bclose.vim'
 " palenight color scheme
 Plug 'drewtempelmeyer/palenight.vim'
-" Syntax checker via syntastic
-Plug 'vim-syntastic/syntastic'
+" deus color scheme
+Plug 'ajmwagar/vim-deus'
+" Syntax checker via ale
+Plug 'w0rp/ale'
+" Easily edit surroundings
+Plug 'tpope/vim-surround'
+" Vim wrapper for UNIX
+Plug 'tpope/vim-eunuch'
+" Configure status line
+Plug 'vim-airline/vim-airline'
+" airline themes
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " color theme
@@ -120,17 +130,16 @@ map <leader>ba :bufdo bd<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 
+" vimrc stuff
+" map vimrc to open vimrc
+map <leader>vimrc :e ~/.vim/vimrc<cr>
+map <leader>sv :source ~/.vimrc<cr>
+
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " delete trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c\ \ \%{fugitive#statusline()}
 
 augroup numbertoggle
     autocmd!
@@ -141,8 +150,12 @@ augroup END
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
+" DelimitMate set expansions
+let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
+
 " PALENIGHT
-" Enable true colors
+ " Enable true colors
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -155,6 +168,14 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" ALE
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
+"AIRLINE
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -165,5 +186,6 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
 
 
