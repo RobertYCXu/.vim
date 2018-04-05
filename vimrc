@@ -121,6 +121,34 @@ set colorcolumn=100
 set hidden
 set history=500
 
+" don't match autocomplete from included files
+set complete-=i
+
+" search in real time
+set incsearch
+
+" autoread
+set autoread
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+" always have a line after cursor
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
+
+" prettify visible whitespace
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
@@ -128,7 +156,7 @@ map <leader>bd :Bclose<cr>:tabclose<cr>gT
 map <leader>ba :bufdo bd<cr>
 
 map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
+map <leader>m :bprevious<cr>
 
 " vimrc stuff
 " map vimrc to open vimrc
