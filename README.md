@@ -9,7 +9,7 @@ git clone https://github.com/RobertYCXu/vim-config .vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ```
 ## Dependencies
-*1. Powerline fonts*
+**1. Powerline fonts**
 ```
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1
