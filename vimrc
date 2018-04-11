@@ -34,7 +34,11 @@ Plug 'vim-airline/vim-airline'
 " airline themes
 Plug 'vim-airline/vim-airline-themes'
 " show indentation
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
+" allow plugins to access .
+Plug 'tpope/vim-repeat'
+" Sublime search for vim
+Plug 'dyng/ctrlsf.vim'
 call plug#end()
 
 " color theme
