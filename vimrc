@@ -21,8 +21,6 @@ Plug 'elzr/vim-json'
 Plug 'chrismccord/bclose.vim'
 " palenight color scheme
 Plug 'drewtempelmeyer/palenight.vim'
-" deus color scheme
-Plug 'ajmwagar/vim-deus'
 " Syntax checker via ale
 Plug 'w0rp/ale'
 " Easily edit surroundings
@@ -170,6 +168,7 @@ map <leader>m :bprevious<cr>
 " map vimrc to open vimrc
 map <leader>vimrc :e ~/.vim/vimrc<cr>
 map <leader>sv :source ~/.vimrc<cr>
+map <leader>f :b#<cr>
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -209,6 +208,4 @@ function! HasPaste()
     endif
     return ''
 endfunction
-
-
 
