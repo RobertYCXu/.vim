@@ -157,12 +157,13 @@ if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 
+" BUFFERS
 " Close the current buffer
-" map <leader>bd :Bclose<cr>:tabclose<cr>gT
-
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
 " Close all the buffers
-" map <leader>ba :bufdo bd<cr>
-
+map <leader>ba :bufdo bd<cr>
+" switch to last buffer
+map <leader>f :b#<cr>
 " map <leader>l :bnext<cr>
 " map <leader>m :bprevious<cr>
 
@@ -170,10 +171,9 @@ endif
 " map vimrc to open vimrc
 map <leader>vimrc :e ~/.vim/vimrc<cr>
 map <leader>sv :source ~/.vimrc<cr>
+
 " open in chrome
 map <leader>gc :!open % -a Google\ Chrome<cr>
-" switch to last buffer
-map <leader>f :b#<cr>
 
 " find tags file
 if has('path_extra')
