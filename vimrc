@@ -21,8 +21,6 @@ Plug 'elzr/vim-json'
 Plug 'chrismccord/bclose.vim'
 " palenight color scheme
 Plug 'drewtempelmeyer/palenight.vim'
-" deus color scheme
-Plug 'ajmwagar/vim-deus'
 " Syntax checker via ale
 Plug 'w0rp/ale'
 " Easily edit surroundings
@@ -39,6 +37,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-repeat'
 " Sublime search for vim
 Plug 'dyng/ctrlsf.vim'
+" useful mappings
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 " color theme
@@ -158,13 +158,13 @@ if &listchars ==# 'eol:$'
 endif
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+" map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
 " Close all the buffers
-map <leader>ba :bufdo bd<cr>
+" map <leader>ba :bufdo bd<cr>
 
-map <leader>l :bnext<cr>
-map <leader>m :bprevious<cr>
+" map <leader>l :bnext<cr>
+" map <leader>m :bprevious<cr>
 
 " vimrc stuff
 " map vimrc to open vimrc
@@ -172,6 +172,13 @@ map <leader>vimrc :e ~/.vim/vimrc<cr>
 map <leader>sv :source ~/.vimrc<cr>
 " open in chrome
 map <leader>gc :!open % -a Google\ Chrome<cr>
+" switch to last buffer
+map <leader>f :b#<cr>
+
+" find tags file
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -211,6 +218,4 @@ function! HasPaste()
     endif
     return ''
 endfunction
-
-
 
