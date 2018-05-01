@@ -170,6 +170,8 @@ map <leader>m :bprevious<cr>
 " map vimrc to open vimrc
 map <leader>vimrc :e ~/.vim/vimrc<cr>
 map <leader>sv :source ~/.vimrc<cr>
+" open in chrome
+map <leader>gc :!open % -a Google\ Chrome<cr>
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
