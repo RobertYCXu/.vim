@@ -39,6 +39,10 @@ Plug 'tpope/vim-repeat'
 Plug 'dyng/ctrlsf.vim'
 " useful mappings
 Plug 'tpope/vim-unimpaired'
+" latex live preview
+Plug 'xuhdev/vim-latex-live-preview'
+" latex plugin
+Plug 'lervag/vimtex'
 call plug#end()
 
 " color theme
@@ -174,6 +178,9 @@ map <leader>sv :source ~/.vimrc<cr>
 
 " open in chrome
 map <leader>gc :!open % -a Google\ Chrome<cr>
+" latex previewer
+let g:livepreview_previewer = 'open -a Preview'
+autocmd Filetype tex setl updatetime=1
 
 " find tags file
 if has('path_extra')
