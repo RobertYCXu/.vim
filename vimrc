@@ -110,8 +110,8 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " indent things
 set tw=99
@@ -168,16 +168,18 @@ map <leader>bd :Bclose<cr>:tabclose<cr>gT
 map <leader>ba :bufdo bd<cr>
 " switch to last buffer
 map <leader>f :b#<cr>
-" map <leader>l :bnext<cr>
-" map <leader>m :bprevious<cr>
 
 " vimrc stuff
 " map vimrc to open vimrc
 map <leader>vimrc :e ~/.vim/vimrc<cr>
 map <leader>sv :source ~/.vimrc<cr>
 
+" run file in vim
+nnoremap <leader>r :!"%:p"
+
 " open in chrome
 map <leader>gc :!open % -a Google\ Chrome<cr>
+
 " latex previewer
 let g:livepreview_previewer = 'open -a Preview'
 autocmd Filetype tex setl updatetime=1
