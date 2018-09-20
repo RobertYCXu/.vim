@@ -40,7 +40,7 @@ Plug 'dyng/ctrlsf.vim'
 " useful mappings
 Plug 'tpope/vim-unimpaired'
 " latex live preview
-Plug 'xuhdev/vim-latex-live-preview'
+" Plug 'xuhdev/vim-latex-live-preview'
 " latex plugin
 Plug 'lervag/vimtex'
 call plug#end()
