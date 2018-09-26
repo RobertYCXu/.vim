@@ -43,6 +43,8 @@ Plug 'tpope/vim-unimpaired'
 " Plug 'xuhdev/vim-latex-live-preview'
 " latex plugin
 Plug 'lervag/vimtex'
+" mustache handlebars syntax
+Plug 'mustache/vim-mustache-handlebars'
 call plug#end()
 
 " color theme
@@ -173,6 +175,9 @@ map <leader>f :b#<cr>
 " map vimrc to open vimrc
 map <leader>vimrc :e ~/.vim/vimrc<cr>
 map <leader>sv :source ~/.vimrc<cr>
+
+" map ff to :FZF
+map ff :FZF<cr>
 
 " run file in vim
 nnoremap <leader>r :!"%:p"
