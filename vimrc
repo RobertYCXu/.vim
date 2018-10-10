@@ -62,6 +62,7 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+nmap <leader>e :q<cr>
 
 " set wildmenu
 set wildmenu
@@ -178,6 +179,9 @@ map <leader>sv :source ~/.vimrc<cr>
 
 " map ff to :FZF
 map ff :FZF<cr>
+
+" map grep
+map <leader>g :grep -r
 
 " run file in vim
 nnoremap <leader>r :!"%:p"
