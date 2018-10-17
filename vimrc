@@ -183,6 +183,11 @@ map ff :FZF<cr>
 " map grep
 map <leader>g :grep -r
 
+" map ca to copy file to clipboard
+map <leader>ca :%w !pbcopy<cr><cr>
+" map cp to copy selection to clipboard
+map <leader>cp :w !pbcopy<cr>
+
 " run file in vim
 nnoremap <leader>r :!"%:p"
 
