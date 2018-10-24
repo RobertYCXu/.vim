@@ -186,13 +186,19 @@ map <leader>g :grep -r
 " map ca to copy file to clipboard
 map <leader>ca :%w !pbcopy<cr><cr>
 " map cp to copy selection to clipboard
-map <leader>cp :w !pbcopy<cr>
+map <leader>cp :w !pbcopy<cr><cr>
 
 " run file in vim
 nnoremap <leader>r :!"%:p"
 
 " open in chrome
 map <leader>gc :!open % -a Google\ Chrome<cr>
+
+" split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " latex previewer
 let g:livepreview_previewer = 'open -a Preview'
