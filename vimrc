@@ -45,6 +45,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'lervag/vimtex'
 " mustache handlebars syntax
 Plug 'mustache/vim-mustache-handlebars'
+" tmux navigation
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " color theme
@@ -199,6 +201,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" clear highlights on esc
+nnoremap <esc> :noh<cr><esc>
 
 " latex previewer
 let g:livepreview_previewer = 'open -a Preview'
