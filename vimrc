@@ -148,9 +148,9 @@ set autoread
 set backspace=indent,eol,start
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
+" if maparg('<C-L>', 'n') ==# ''
+  " nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+" endif
 
 " always have a line after cursor
 if !&scrolloff
@@ -203,7 +203,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " clear highlights on esc
-nnoremap <esc> :noh<cr><esc>
+nnoremap <leader>l :noh<cr><esc>
 
 " latex previewer
 let g:livepreview_previewer = 'open -a Preview'
