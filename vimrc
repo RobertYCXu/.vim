@@ -35,8 +35,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 " allow plugins to access .
 Plug 'tpope/vim-repeat'
-" Sublime search for vim
-Plug 'dyng/ctrlsf.vim'
 " useful mappings
 Plug 'tpope/vim-unimpaired'
 " latex live preview
