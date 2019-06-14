@@ -35,8 +35,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 " allow plugins to access .
 Plug 'tpope/vim-repeat'
-" Sublime search for vim
-Plug 'dyng/ctrlsf.vim'
 " useful mappings
 Plug 'tpope/vim-unimpaired'
 " latex live preview
@@ -203,7 +201,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " clear highlights on esc
-nnoremap <leader>l :noh<cr>
+nnoremap <leader>l :noh<cr><esc>
 
 " latex previewer
 let g:livepreview_previewer = 'open -a Preview'
