@@ -1,4 +1,5 @@
 # Personal vim config
+## DEPRECATED: Vim settings now live in my dotfiles repo.
 ## Installation
 ```
 cd ~
